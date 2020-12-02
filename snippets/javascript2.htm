@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<p id="main-body">Hello, world!</p>
+</html>
+<script>
+async function change() {
+    await new Promise(r => setTimeout(r, 1000));
+    document.getElementById("main-body").innerHTML = "This was put here with code!";
+}
+change();
+</script>

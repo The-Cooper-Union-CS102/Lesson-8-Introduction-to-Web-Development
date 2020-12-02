@@ -1,0 +1,10 @@
+<html>
+<p id="main-body">Hello, world!</p>
+<button onclick="changeText('Hello Button')">Click Me!</button>
+<button onclick="changeText('Hello Events')">Click Me!</button>
+</html>
+<script>
+function changeText(text) {
+    document.getElementById("main-body").innerHTML = text;
+}
+</script>

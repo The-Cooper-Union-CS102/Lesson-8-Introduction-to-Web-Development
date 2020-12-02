@@ -212,4 +212,83 @@ However, we will see the IDs can be useful later on in JavaScript.
 {"html": "snippets/css4.htm"}
 ```
 
+## JavaScript
+
+JavaSciprt is the defacto programming language for the web.  Don't confuse
+this language with the other well know language, Java.  They are completely
+different, despite the name.
+
+JavaScript is closer to Python than C or C++.  It is not type safe, and it
+is interpreted.  The language has several built in features that allow it
+to communicate with the web page.  We will view it solely in the context
+for now, but it can be used outside of web pages.
+
+### Hello World
+
+First we will modify some HTML element with different text.  Here we are
+using the boilerplate HTML template, but we have added some JavaScript at
+the bottom using the `<script>` HTML tag.
+
+```snippet
+{"html": "snippets/javascript1.htm"}
+```
+
+Let's break this down.
+
+First, the `document` is an object provided by the browser.  This is
+the main object that allows us to interface with the page.  Second,
+`getElementById` is a method of that object which we can use to,
+you guessed it, get an element by its ID.  In this case you can see
+that in our HTML we created a paragraph with the id `main-body`.
+This method returns whatever HTML element has that ID.  If there
+is no element with that ID, this method would return `null` which
+is similar to Python's `None`.  In this case it returns a valid
+element, and we can modify attributes of that element, like `innerHTML`.
+In this case we got a simple paragraph with no nested elements, so
+it suffices to simply change the value to whatever text we want.
+This results in the text being changed as soon as the page is loaded
+so we don't see the original text.
+
+This example uses something which we won't cover, called a **Promise** to
+create a delay, and show that the code is actually doing something.
+
+```snippet
+{"html": "snippets/javascript2.htm"}
+```
+
+### Events
+
+Unlike many other languages, the main goal of JavaScript is to work as an
+interactive interface with your browser.  Therefore, there are a lot of
+features which make it easier for you to program in response to things
+happening.  One of these main features is **events**.  With events, you
+can write code that runs whenever an event is triggered.  Events are usually
+triggered by the user doing something like clicking a button.  Here is an
+example.
+
+```snippet
+{"html": "snippets/javascript3.htm"}
+```
+
+This `changeText` function is a **callback** function, or a function
+that is supposed to be run in response to some event.
+
+Lets just take a look at one more example which persists data
+between interactions.  Here is a very nice fully fledged cookie
+clicker game.
+
+```snippet
+{"html": "snippets/javascript4.htm"}
+```
+
+The JavaScript has a whole host of other features, including many which
+replicate functionality in programming language we've seen already.  I am not
+going to go through them here, but you should have an all right time learning
+them if you have C and Python down.
+
+## An Actual Web Page
+
+Let's take a look at an example of an actual web page.  First we'll take
+a look at a Google web page, then we'll look at one of our own.
+
 
