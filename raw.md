@@ -291,4 +291,6 @@ them if you have C and Python down.
 Let's take a look at an example of an actual web page.  First we'll take
 a look at a Google web page, then we'll look at one of our own.
 
-
+```snippet
+{"html": "snippets/home.htm", "css": "snippets/home.css", "javascript": "snippets/home.js"}
+```
