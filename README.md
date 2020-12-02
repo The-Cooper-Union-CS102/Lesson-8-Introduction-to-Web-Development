@@ -405,4 +405,71 @@ them if you have C and Python down.
 Let's take a look at an example of an actual web page.  First we'll take
 a look at a Google web page, then we'll look at one of our own.
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cory Nezin</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+<div>
+<h1>Cory Nezin</h1>
+<img id="my-face" src="me.jpg" onclick="shrinkFace()"></img>
+<h2>Introduction</h2>
+<p>Hello, my name is Cory Nezin.  I graduated from The Cooper Union in 2018
+with a degree in Electrical Engineering.  I work at Bloomberg LP as a software
+engineer, and I teach at The Cooper Union.</p>
+<h2>Work</h2>
+I work on document intelligence at Bloomberg LP.  That means we ingest documents
+and automatically scan them for content we can update our system with.  We
+primarily use deep learning models like:
+<ul>
+<li>Random Forest</li>
+<li>Pretrained Word Embeddings</li>
+<li>Long short-term memory</li>
+<li>Transformers</li>
+</ul>
+<h2>Teaching</h2>
+<p>I am an adjunct professor at The Cooper Union.  I teach an
+introduction to computer science.  You can find the class repository
+<a href="https://github.com/The-Cooper-Union-CS102">here.</a></p>
+<h2>Blog</h2>
+I have a blog.  You can find some posts here in reverse chronological order.
+<ol>
+<li><a href="">How to get an internship</a></li>
+<li><a href="">How to win at Fortnite</a></li>
+<li><a href="">Deborah and Me</a></li>
+</ol>
+</div>
+</body>
+</html>
+<script src="home.js"></script>
+```
+```css
+div {
+    width: 600px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+```
+```javascript
+function shrinkFace() {
+    myFace = document.getElementById('my-face')
+    widthString = window.getComputedStyle(myFace).width.slice(0, -2)
+    widthInt = parseInt(widthString)
+    newWidthInt = widthInt / 1.5
+    myFace.style.width = String(newWidthInt) + "px"
+}
+```
 
