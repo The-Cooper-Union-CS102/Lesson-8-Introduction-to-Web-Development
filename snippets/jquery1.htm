@@ -1,0 +1,12 @@
+<html>
+<p id="main-body">0</p>
+<button onclick="addOne()">Click Me!</button>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var count = 0;
+function addOne() {
+    count += 1;
+    $("#main-body").html(String(count));
+}
+</script>

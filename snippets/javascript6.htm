@@ -1,0 +1,16 @@
+<html>
+<p id="main-body">0</p>
+</html>
+<script>
+var count = 0;
+function addOne() {
+    count += 1;
+    document.getElementById("main-body").innerHTML = String(count);
+}
+for (let i = 0; i < 5; i++) {
+    var btn = document.createElement('button');
+    btn.innerHTML = `button ${i}`;
+    btn.onclick = addOne;
+    document.body.appendChild(btn);
+}
+</script>

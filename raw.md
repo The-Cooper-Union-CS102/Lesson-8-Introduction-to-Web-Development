@@ -273,18 +273,47 @@ example.
 This `changeText` function is a **callback** function, or a function
 that is supposed to be run in response to some event.
 
-Lets just take a look at one more example which persists data
-between interactions.  Here is a very nice fully fledged cookie
-clicker game.
+Lets just take a look at one more example which persists data between
+interactions.  Here is a very nice fully fledged cookie clicker game.
 
 ```snippet
 {"html": "snippets/javascript4.htm"}
 ```
 
-The JavaScript has a whole host of other features, including many which
-replicate functionality in programming language we've seen already.  I am not
-going to go through them here, but you should have an all right time learning
-them if you have C and Python down.
+We can also add the `onclick` attribute in code like in the following example.
+This can be done for any element with lots of different events.
+
+```snippet
+{"html": "snippets/javascript5.htm"}
+```
+
+We could also use a similar method to programatically create buttons.
+
+```snippet
+{"html": "snippets/javascript6.htm"}
+```
+
+We can use some functional programming to programmatically create functions
+for each button too!
+
+```snippet
+{"html": "snippets/javascript7.htm"}
+```
+
+### jQuery
+
+jQuery is a simple and common external JavaScript library which makes your life
+a little easier when dealing with HTML.  Here is a simple modification of our
+counting example.
+
+```snippet
+{"html": "snippets/jquery1.htm"}
+```
+
+JavaScript has a whole host of other features, including many which replicate
+functionality in programming language we've seen already.  I am not going to go
+through them here, but you should have an all right time learning them if you
+have C and Python down.
 
 ## An Actual Web Page
 
