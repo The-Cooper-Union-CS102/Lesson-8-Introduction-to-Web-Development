@@ -46,6 +46,7 @@ usually view an HTML (or `.htm`) file by typing the file path into your browser
 URL bar.
 
 ```html
+<!--snippets/basic.htm-->
 <p>Hello, world!</p>
 ```
 
@@ -67,6 +68,7 @@ Now that we saw the basic anatomy of a single element, we will add some
 "boilerplate" code that is common to all HTML documents.
 
 ```html
+<!--snippets/boilerplate.htm-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -118,6 +120,7 @@ As an example, let's say we wanted to create a web page with a link to
 W3Schools.  We can do this with with `<a>` tag as follows:
 
 ```html
+<!--snippets/hyperlink.htm-->
 <a href="https://www.w3schools.com/html/html_links.asp">Hello, world!</a>
 ```
 
@@ -141,6 +144,7 @@ the following general format:
 Here is an example where we use `style` to make our text red:
 
 ```html
+<!--snippets/style1.htm-->
 <p style="color:red">Hello, world!</p>
 ```
 
@@ -148,6 +152,7 @@ Here is an example where we use `style` to make our text red:
 We could also make our font size larger:
 
 ```html
+<!--snippets/style2.htm-->
 <p style="font-size:300%">Hello, world!</p>
 ```
 
@@ -155,6 +160,7 @@ We could also make our font size larger:
 Or we could do both:
 
 ```html
+<!--snippets/style3.htm-->
 <p style="color:red;font-size:300%">Hello, world!</p>
 ```
 
@@ -164,6 +170,7 @@ create a new element within our `<p>`, the style is still applied, like in
 the following example.
 
 ```html
+<!--snippets/style4.htm-->
 <p style="color:red;font-size:300%"><span>Hello, world!</span></p>
 ```
 
@@ -188,6 +195,7 @@ to.
 Lets take a look at an example of using CSS via the `<style>` HTML element.
 
 ```html
+<!--snippets/css1.htm-->
 <!DOCTYPE html>
 <html>
 <h1>Hello, All!</h1>
@@ -224,6 +232,7 @@ For example, here we create and use two classes of paragraph, `cory-red` and
 `cory-blue`.
 
 ```html
+<!--snippets/css2.htm-->
 <!DOCTYPE html>
 <html>
 <p class="cory-red">Hello, red class!</p>
@@ -244,6 +253,7 @@ We can also combine multiple classes at the time time.  Here is an example with
 one more class `cory-large`.
 
 ```html
+<!--snippets/css3.htm-->
 <!DOCTYPE html>
 <html>
 <p class="cory-red">Hello, red class!</p>
@@ -271,6 +281,7 @@ does not offer much benefit except separating the style and the organization.
 However, we will see the IDs can be useful later on in JavaScript.
 
 ```html
+<!--snippets/css4.htm-->
 <!DOCTYPE html>
 <html>
 <p id="FirstParagraph">Hello, 1</p>
@@ -305,6 +316,7 @@ using the boilerplate HTML template, but we have added some JavaScript at
 the bottom using the `<script>` HTML tag.
 
 ```html
+<!--snippets/javascript1.htm-->
 <!DOCTYPE html>
 <html>
 <p id="main-body">Hello, world!</p>
@@ -335,6 +347,7 @@ This example uses something which we won't cover, called a **Promise** to
 create a delay, and show that the code is actually doing something.
 
 ```html
+<!--snippets/javascript2.htm-->
 <!DOCTYPE html>
 <html>
 <p id="main-body">Hello, world!</p>
@@ -360,6 +373,7 @@ triggered by the user doing something like clicking a button.  Here is an
 example.
 
 ```html
+<!--snippets/javascript3.htm-->
 <html>
 <p id="main-body">Hello, world!</p>
 <button onclick="changeText('Hello Button')">Click Me!</button>
@@ -376,11 +390,11 @@ function changeText(text) {
 This `changeText` function is a **callback** function, or a function
 that is supposed to be run in response to some event.
 
-Lets just take a look at one more example which persists data
-between interactions.  Here is a very nice fully fledged cookie
-clicker game.
+Lets just take a look at one more example which persists data between
+interactions.  Here is a very nice fully fledged cookie clicker game.
 
 ```html
+<!--snippets/javascript4.htm-->
 <html>
 <p id="main-body">0</p>
 <button onclick="addOne()">Click Me!</button>
@@ -395,10 +409,101 @@ function addOne() {
 ```
 
 
-The JavaScript has a whole host of other features, including many which
-replicate functionality in programming language we've seen already.  I am not
-going to go through them here, but you should have an all right time learning
-them if you have C and Python down.
+We can also add the `onclick` attribute in code like in the following example.
+This can be done for any element with lots of different events.
+
+```html
+<!--snippets/javascript5.htm-->
+<html>
+<p id="main-body">0</p>
+<button id="my-button">Click Me!</button>
+</html>
+<script>
+var count = 0;
+function addOne() {
+    console.log('adding')
+    count += 1;
+    document.getElementById("main-body").innerHTML = String(count);
+}
+document.getElementById("my-button").onclick = addOne;
+</script>
+```
+
+
+We could also use a similar method to programatically create buttons.
+
+```html
+<!--snippets/javascript6.htm-->
+<html>
+<p id="main-body">0</p>
+</html>
+<script>
+var count = 0;
+function addOne() {
+    count += 1;
+    document.getElementById("main-body").innerHTML = String(count);
+}
+for (let i = 0; i < 5; i++) {
+    var btn = document.createElement('button');
+    btn.innerHTML = `button ${i}`;
+    btn.onclick = addOne;
+    document.body.appendChild(btn);
+}
+</script>
+```
+
+
+We can use some functional programming to programmatically create functions
+for each button too!
+
+```html
+<!--snippets/javascript7.htm-->
+<html>
+<p id="main-body">0</p>
+</html>
+<script>
+var count = 0;
+function add(amount) {
+    count += amount;
+    document.getElementById("main-body").innerHTML = String(count);
+}
+for (let i = 0; i < 5; i++) {
+    var btn = document.createElement('button');
+    btn.innerHTML = `button ${i}`;
+    btn.onclick = function() {add(i)};
+    document.body.appendChild(btn);
+}
+</script>
+```
+
+
+### jQuery
+
+jQuery is a simple and common external JavaScript library which makes your life
+a little easier when dealing with HTML.  Here is a simple modification of our
+counting example.
+
+```html
+<!--snippets/jquery1.htm-->
+<html>
+<p id="main-body">0</p>
+<button onclick="addOne()">Click Me!</button>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var count = 0;
+function addOne() {
+    count += 1;
+    $("#main-body").html(String(count));
+}
+</script>
+```
+
+
+JavaScript has a whole host of other features, including many which replicate
+functionality in programming language we've seen already.  I am not going to go
+through them here, but you should have an all right time learning them if you
+have C and Python down.
 
 ## An Actual Web Page
 
@@ -406,6 +511,7 @@ Let's take a look at an example of an actual web page.  First we'll take
 a look at a Google web page, then we'll look at one of our own.
 
 ```html
+<!--snippets/home.htm-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -447,6 +553,7 @@ I have a blog.  You can find some posts here in reverse chronological order.
 <script src="home.js"></script>
 ```
 ```css
+<!--snippets/home.css-->
 div {
     width: 600px;
     margin: 0 auto;
@@ -464,6 +571,7 @@ img {
 }
 ```
 ```javascript
+<!--snippets/home.js-->
 function shrinkFace() {
     myFace = document.getElementById('my-face')
     widthString = window.getComputedStyle(myFace).width.slice(0, -2)
